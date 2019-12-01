@@ -1,2 +1,3 @@
-# advent-of-code-2019
-Advent of Code
+# Advent of Code 2019
+
+##Dec 1th: C
