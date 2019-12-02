@@ -20,18 +20,18 @@ int main(void)
 	);
 
 	int numberArray[100];
-    int i;
-    for (i = 0; i < 100; i++) {
-        fscanf(fptr, "%d", &numberArray[i]);
-    }
+	int i;
+	for (i = 0; i < 100; i++) {
+		fscanf(fptr, "%d", &numberArray[i]);
+	}
 	fclose(fptr); 
 
 	// Find the fuel required for all modules
 	int sum = 0;
 	int fuel = 0;
-    for (i = 0; i < 100; i++){
-    	sum += required_fuel(numberArray[i]);
-    }
+	for (i = 0; i < 100; i++){
+		sum += required_fuel(numberArray[i]);
+	}
 
-    printf("Fuel is: %d\n", sum);
+	printf("Fuel is: %d\n", sum);
 }
