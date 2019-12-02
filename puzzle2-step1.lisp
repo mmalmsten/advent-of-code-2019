@@ -14,17 +14,15 @@
     (setf (nth 2 input-data) 2)
     input-data)
 
-;;; If the opcode is 1
-(defun opcode-one (data i)
+;;; If the opcode is 1 or 2
+(defun opcode (data i)
     (setf (nth (nth (+ i 3) data) data) 
-        (+ (nth (nth (+ i 1) data) data) 
-            (nth (nth (+ i 2) data) data))) data)
-
-;;; If the opcode is 2
-(defun opcode-two (data i)
-    (setf (nth (nth (+ i 3) data) data) 
-        (* (nth (nth (+ i 1) data) data) 
-            (nth (nth (+ i 2) data) data))) data)
+        (if (= (nth i data) 1) 
+            (+ (nth (nth (+ i 1) data) data) 
+                (nth (nth (+ i 2) data) data))
+            (if (= (nth i data) 2)
+                (* (nth (nth (+ i 1) data) data) 
+                    (nth (nth (+ i 2) data) data))))) data)
 
 ;;; Iterate list
 (defun start ()
@@ -33,8 +31,5 @@
         (loop while (< i (list-length data)) do
             (if (= (nth i data) 99) 
                 (setf i (list-length data))
-                (if (= (nth i data) 1) 
-                    (setf data (opcode-one data i))
-                    (if (= (nth i data) 2)
-                        (setf data (opcode-two data i)))))
+                (opcode data i))
             (setf i (+ i 4)))) (nth 0 data))
