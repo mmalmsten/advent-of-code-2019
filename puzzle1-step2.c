@@ -4,15 +4,14 @@
 
 // The sum of the fuel requirements for a module on the spacecraft, also 
 // taking into account the mass of the added fuel.
-int required_fuel(int number){
+int required_fuel(int number) {
 	int n = floor(number / 3) - 2;
 	if(n > 0)
 		return n + required_fuel(n);
 	return 0;
 }
 
-int main(void)
-{
+int main(void) {
 	// Import puzzle data and add to array
 	FILE *fptr;
 	fptr = fopen(

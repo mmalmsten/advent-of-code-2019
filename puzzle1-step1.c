@@ -2,8 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-int main(void)
-{
+int main(void) {
 	// Import puzzle data and add to array
 	FILE *fptr;
 	fptr = fopen(
