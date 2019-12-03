@@ -1,5 +1,4 @@
 <?php 
-ini_set('memory_limit', '-1');
 
 /*
 * Import data and find the Manhattan distance from the central port to the 
