@@ -20,3 +20,8 @@ Start the sbcl shell and run using the following command:
 
 ## Dec 3rd: PHP
 🔍First appeared 1995. Imperative, functional, object-oriented, procedural, reflective.
+
+## Dec 4th: Smalltalk (Squeak)
+🔍First appeared 1972 (Squeak in 1996). Object-oriented with its own virtual machine - the code is written in the running environment.
+
+💡Squeak can be [downloaded here](https://squeak.org/) and there is an outstanding aide-memoire to be found [here](https://wiki.squeak.org/squeak/5699).
