@@ -9,7 +9,6 @@ matching := 0.
         number = number asInteger.
         number < before ifTrue: [increasing := false].
         (has_two == false) & (number == before) ifTrue: [
-            has_two := true.
             (n == 6) ifTrue: [
                 x := keystring at: 4.
                 has_two := x ~~ number
