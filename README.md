@@ -25,3 +25,8 @@ Start the sbcl shell and run using the following command:
 🔍First appeared 1972 (Squeak in 1996). Object-oriented with its own virtual machine, on which the code can be changed while the program is running.
 
 💡Squeak can be [downloaded here](https://squeak.org/) and there is an outstanding aide-memoire to be found [here](https://wiki.squeak.org/squeak/5699).
+
+## Dec 5th: Scala
+🔍First appeared 2004. Functional, imperative, object-oriented.
+
+*A final puzzle solution is coming soon...*
