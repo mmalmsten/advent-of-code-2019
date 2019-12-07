@@ -6,6 +6,8 @@ open("/Users/madde/Sites/advent-of-code-2019/input/puzzle6.txt") do file
     end    
 end
 
+
+"Get the total number of direct orbits and indirect orbits."
 x = 0
 for orb in keys(orbits)
     while haskey(orbits, orb)
