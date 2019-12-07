@@ -30,3 +30,6 @@ Start the sbcl shell and run using the following command:
 🔍First appeared 2004. Functional, imperative, object-oriented.
 
 *A final puzzle solution is coming soon...*
+
+## Dec 6th: Julia
+🔍First appeared 2012. Procedural, functional.
