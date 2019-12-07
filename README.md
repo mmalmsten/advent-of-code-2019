@@ -29,7 +29,7 @@ Start the sbcl shell and run using the following command:
 ## Dec 5th: Scala
 🔍First appeared 2004. Functional, imperative, object-oriented.
 
-*A final puzzle solution is coming soon...*
+A Scala tutorial can be found [here](https://www.tutorialspoint.com/scala/index.htm)
 
 ## Dec 6th: Julia
 🔍First appeared 2012. Procedural, functional.
