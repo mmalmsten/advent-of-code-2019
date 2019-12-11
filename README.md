@@ -1,7 +1,7 @@
 # 🎄 Advent of Code 2019 🎄
 Here's my take on the Advent of Code challenge 2019. Instead of choosing "the right tool for the job", I decided to go through a list of 24 different pre-decided programming languages and solve the puzzle with the tool I got assigned.
 
-Some of the programming languages I know by heart, others I had never tried and barely seen before. So there's a BIG disclosure regarding code quality... 🙈🙉🙊
+Some of the programming languages I know by heart, others I had never tried and barely seen before this challenge. So there's a BIG disclosure regarding code quality... 🙈🙉🙊
 
 ## Dec 1st: C
 🔍First appeared 1972. Imperative (procedural), structured. Influenced e.g. C++, Java, PHP, C#.
