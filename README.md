@@ -1,5 +1,7 @@
 # 🎄 Advent of Code 2019 🎄
-My take on the Advent of Code challenge.
+Here's my take on the Advent of Code challenge 2019. Instead of choosing "the right tool for the job", I decided to go through a list of 24 different pre-decided programming languages and solve the puzzle with the tool I got assigned.
+
+Some of the programming languages I know by heart, others I had never tried and barely seen before. So there's a big disclosure on code quality... 😁🙈😊
 
 ## Dec 1st: C
 🔍First appeared 1972. Imperative (procedural), structured. Influenced e.g. C++, Java, PHP, C#.
@@ -33,3 +35,10 @@ A Scala tutorial can be found [here](https://www.tutorialspoint.com/scala/index.
 
 ## Dec 6th: Julia
 🔍First appeared 2012. Procedural, functional.
+
+## Dec 7th: Elixir (coming soon...)
+🔍First appeared 2011. Functional, concurrent, distributed. Inspired by Ruby, Erlang, and Clojure. Builds on top of Erlang and is running on the BEAM.
+
+Elixir comes with a detailed and well-written [documentation](https://hexdocs.pm/elixir)
+
+## Dec 8th: 
