@@ -33,3 +33,8 @@ A Scala tutorial can be found [here](https://www.tutorialspoint.com/scala/index.
 
 ## Dec 6th: Julia
 🔍First appeared 2012. Procedural, functional.
+
+## Dec 7th - 9th: Work in progress...
+
+## Dec 10th: Lua
+🔍First appeared 1993. Imperative, functional.
