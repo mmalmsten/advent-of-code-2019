@@ -9,8 +9,8 @@ import java.util.ArrayList;
 class Puzzle12 { 
 
 	private static class Moon {
-    	public ArrayList<Integer> pos;
-    	public ArrayList<Integer> vel;
+		public ArrayList<Integer> pos;
+		public ArrayList<Integer> vel;
 
 		public Moon(String[] posString) {
 			vel = new ArrayList<Integer>();
