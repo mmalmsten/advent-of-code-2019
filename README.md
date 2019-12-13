@@ -1,7 +1,7 @@
 # 🎄 Advent of Code 2019 🎄
 Here's my take on the Advent of Code challenge 2019. Instead of choosing "the right tool for the job", I decided to go through a list of 24 different pre-decided programming languages and solve the puzzle with the tool I got assigned.
 
-Some of the programming languages I know by heart, others I had never tried and barely seen before this challenge. So there's a BIG disclosure regarding code quality... 🙈🙉🙊
+Some of the programming languages I know by heart, others I had never tried and barely seen before this challenge. And some occasions were definitely a case of "the absolutely wrong tool for the job". So there's a BIG disclosure regarding code quality... 🙈🙈🙈
 
 ## Dec 1st: C
 🔍First appeared 1972. Imperative (procedural), structured. Influenced e.g. C++, Java, PHP, C#.
@@ -21,7 +21,7 @@ Start the sbcl shell and run using the following command:
 ```
 
 ## Dec 3rd: PHP
-🔍First appeared 1995. Imperative, functional, object-oriented, procedural, reflective.
+🔍First appeared 1995. Imperative, functional, object-oriented, procedural.
 
 ## Dec 4th: Smalltalk (Squeak)
 🔍First appeared 1972 (Squeak in 1996). Object-oriented with its own virtual machine, on which the code can be changed while the program is running.
@@ -42,7 +42,7 @@ A Scala tutorial can be found [here](https://www.tutorialspoint.com/scala/index.
 💡Elixir comes with a detailed and well-written [documentation](https://hexdocs.pm/elixir)
 
 ## Dec 8th: Ruby
-🔍First appeared 1995. Functional, imperative, object-oriented, reflective.
+🔍First appeared 1995. Functional, imperative, object-oriented.
 
 ## Dec 9th: Pony (coming soon...)
 
@@ -51,3 +51,7 @@ A Scala tutorial can be found [here](https://www.tutorialspoint.com/scala/index.
 
 💡Lua can be tried online [here](https://www.lua.org/cgi-bin/demo)
 
+## Dec 11th: Coming soon
+
+## Dec 12th: Java
+🔍First appeared 1995. Object-oriented (class-based), imperative.
