@@ -90,7 +90,7 @@ class Puzzle12 {
 			update();
 		double result = 0;
 		for(int i = 0; i < moons.size(); i++)
-		    result += moons.get(i).energy();
+			result += moons.get(i).energy();
 		System.out.println(result);
 	} 
 }
