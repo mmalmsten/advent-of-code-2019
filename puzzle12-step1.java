@@ -46,20 +46,20 @@ class Puzzle12 {
 	public static void update() {
 		ArrayList<Moon> newMoons = new ArrayList<Moon>();
 		newMoons.addAll(moons);
-        for (Moon moon : moons) {
-            for (Moon moon1 : moons) {
-                if (moon != moon1) {
+		for (Moon moon : moons) {
+			for (Moon moon1 : moons) {
+				if (moon != moon1) {
 					for (int c = 0; c < 3; c++){
-	                	if (moon.pos.get(c) < moon1.pos.get(c)) {
+						if (moon.pos.get(c) < moon1.pos.get(c)) {
 							moon.vel.set(c, moon.vel.get(c) + 1);
 						}
-	                	else if (moon.pos.get(c) > moon1.pos.get(c)) {
+						else if (moon.pos.get(c) > moon1.pos.get(c)) {
 							moon.vel.set(c, moon.vel.get(c) - 1);
 						}
 					}
-                }
-            }
-        }
+				}
+			}
+		}
 		for(int m = 0; m < moons.size(); m++)
 			moons.get(m).updatePosition();
 		moons = new ArrayList<Moon>();
