@@ -1,3 +1,6 @@
+# --------------------------------------------------------------------------------------------------
+# This is an Elixir implementation of Puzzle 5 (step 2). I'll continue working on this later. :)
+# --------------------------------------------------------------------------------------------------
 defmodule Puzzle do
 
 	def start do
@@ -19,19 +22,22 @@ defmodule Puzzle do
 			# Exit
 			<<_::binary-size(3),"99">> -> run(program, :done)
 
-            # Adds together numbers read from two positions and stores the result in a third position
+            # Adds together numbers read from two positions and stores the result in a third
+            # position
 			<<_::binary-size(1),p2::binary-size(1),p1::binary-size(1),_::binary-size(1),"1">> -> 
 				program1 = Map.put(program, Map.get(program, n + 3), 
 					mode(program, p1, n + 1) + mode(program, p2, n + 2))
 				run(program1, n + 4)
 
-            # Works exactly like opcode 1, except it multiplies the two inputs instead of adding them
+            # Works exactly like opcode 1, except it multiplies the two inputs instead of adding
+            # them
 			<<_::binary-size(1),p2::binary-size(1),p1::binary-size(1),_::binary-size(1),"2">> -> 
 				program1 = Map.put(program, Map.get(program, n + 3), 
 					mode(program, p1, n + 1) * mode(program, p2, n + 2))
 				run(program1, n + 4)
 
-			# Takes a single integer as input and saves it to the position given by its only parameter
+			# Takes a single integer as input and saves it to the position given by its only
+			# parameter
 			<<_::binary-size(4),"3">> -> 
 				input = 5
 				program1 = Map.put(program, Map.get(program, n + 3), input)
@@ -42,21 +48,24 @@ defmodule Puzzle do
 				IO.puts(mode(program, p1, n + 1))
 				run(program, n + 2)
 
-			# If the first parameter is non-zero, it sets the instruction pointer to the value from the second parameter. Otherwise, it does nothing.
+			# If the first parameter is non-zero, it sets the instruction pointer to the value from
+			# the second parameter. Otherwise, it does nothing.
 			<<_::binary-size(1),p2::binary-size(1),p1::binary-size(1),_::binary-size(1),"5">> -> 
 				case mode(program, p1, n + 1) do
 					0 -> run(program, n + 3)
 					_ -> run(program, mode(program, p2, n + 2))
 				end
 
-			# If the first parameter is zero, it sets the instruction pointer to the value from the second parameter. Otherwise, it does nothing.
+			# If the first parameter is zero, it sets the instruction pointer to the value from the
+			# second parameter. Otherwise, it does nothing.
 			<<_::binary-size(1),p2::binary-size(1),p1::binary-size(1),_::binary-size(1),"6">> -> 
 				case mode(program, p1, n + 1) do
 					0 -> run(program, mode(program, p2, n + 2))
 					_ -> run(program, n + 3)
 				end
 
-			# If the first parameter is less than the second parameter, it stores 1 in the position given by the third parameter. Otherwise, it stores 0.
+			# If the first parameter is less than the second parameter, it stores 1 in the position
+			# given by the third parameter. Otherwise, it stores 0.
 			<<_::binary-size(1),p2::binary-size(1),p1::binary-size(1),_::binary-size(1),"7">> -> 
 				program1 = case mode(program, p1, n + 1) < mode(program, p2, n + 2) do
 					true -> Map.put(program, Map.get(program, n + 3), 1)
@@ -65,7 +74,8 @@ defmodule Puzzle do
 				run(program1, n + 4)
 
 
-			# If the first parameter is equal to the second parameter, it stores 1 in the position given by the third parameter. Otherwise, it stores 0.
+			# If the first parameter is equal to the second parameter, it stores 1 in the position
+			# given by the third parameter. Otherwise, it stores 0.
 			<<_::binary-size(1),p2::binary-size(1),p1::binary-size(1),_::binary-size(1),"8">> -> 
 				program1 = case mode(program, p1, n + 1) == mode(program, p2, n + 2) do
 					true -> Map.put(program, Map.get(program, n + 3), 1)
