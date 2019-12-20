@@ -1,5 +1,5 @@
 # 🎄 Advent of Code 2019 🎄
-Here's my take on the Advent of Code challenge 2019. Instead of choosing "the right tool for the job", I decided to go through a list of 24 different pre-decided programming languages and solve the puzzle with the tool I got assigned.
+Here's my take on the Advent of Code challenge 2019. Instead of choosing "the right tool for the job", I decided to go through a list of 25 different pre-decided programming languages and solve the puzzle with the tool I got assigned.
 
 Some of the programming languages I know by heart, others I had never tried and barely seen before this challenge. And some occasions were definitely a case of "the absolutely wrong tool for the job". So there's a BIG disclosure regarding code quality... 🙈🙈🙈
 
@@ -55,3 +55,28 @@ A Scala tutorial can be found [here](https://www.tutorialspoint.com/scala/index.
 
 ## Dec 12th: Java
 🔍First appeared 1995. Object-oriented (class-based), imperative.
+
+## Dec 14th: Coming soon 
+
+## Dec 15th: Coming soon 
+
+## Dec 16th: Haskell
+🔍First appeared 1990. Functional.
+
+## Dec 17th: Coming soon 
+
+## Dec 18th: Coming soon 
+
+## Dec 19th: Coming soon 
+
+## Dec 20th: Coming soon 
+
+## Dec 21th: Coming soon 
+
+## Dec 22th: Coming soon 
+
+## Dec 23th: Coming soon 
+
+## Dec 24th: Coming soon 
+
+## Dec 25th: Coming soon 
