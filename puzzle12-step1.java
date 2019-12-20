@@ -9,10 +9,10 @@ import java.util.ArrayList;
 class Puzzle12 { 
 
 	private static class Moon {
-		public ArrayList<Integer> pos;
-		public ArrayList<Integer> vel;
+		private ArrayList<Integer> pos;
+		private ArrayList<Integer> vel;
 
-		public Moon(String[] posString) {
+		private Moon(String[] posString) {
 			vel = new ArrayList<Integer>();
 			pos = new ArrayList<Integer>();
 			vel.add(0);
@@ -23,13 +23,28 @@ class Puzzle12 {
 			pos.add(Integer.parseInt(posString[2]));
 		}
 
-		public void updatePosition() {
+		private void update(ArrayList<Moon> moons) {
+			for (Moon moon : moons) {
+				if (moon != this) {
+					for (int c = 0; c < 3; c++){
+						if (pos.get(c) < moon.pos.get(c)) {
+							vel.set(c, vel.get(c) + 1);
+						}
+						else if (pos.get(c) > moon.pos.get(c)) {
+							vel.set(c, vel.get(c) - 1);
+						}
+					}
+				}
+			}
+		}
+
+		private void updatePosition() {
 			pos.set(0, pos.get(0) + vel.get(0));
 			pos.set(1, pos.get(1) + vel.get(1));
 			pos.set(2, pos.get(2) + vel.get(2));
 		}
 
-		public int energy() {
+		private int energy() {
 			int sumPos = Math.abs(pos.get(0)) + 
 				Math.abs(pos.get(1)) + 
 				Math.abs(pos.get(2));
@@ -43,22 +58,11 @@ class Puzzle12 {
 
 	private static ArrayList<Moon> moons;
 
-	public static void update() {
+	private static void update() {
 		ArrayList<Moon> newMoons = new ArrayList<Moon>();
 		newMoons.addAll(moons);
 		for (Moon moon : moons) {
-			for (Moon moon1 : moons) {
-				if (moon != moon1) {
-					for (int c = 0; c < 3; c++){
-						if (moon.pos.get(c) < moon1.pos.get(c)) {
-							moon.vel.set(c, moon.vel.get(c) + 1);
-						}
-						else if (moon.pos.get(c) > moon1.pos.get(c)) {
-							moon.vel.set(c, moon.vel.get(c) - 1);
-						}
-					}
-				}
-			}
+			moon.update(moons);
 		}
 		for(int m = 0; m < moons.size(); m++)
 			moons.get(m).updatePosition();
