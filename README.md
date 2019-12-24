@@ -80,7 +80,7 @@ A Scala tutorial can be found [here](https://www.tutorialspoint.com/scala/index.
 
 ## Dec 23th: Python 
 
-## Dec 24th: Forth 
+## Dec 24th: Swift 
 
 ## Dec 25th: C
 🔍First appeared 1972. Imperative (procedural), structured. Influenced e.g. C++, Java, PHP, C#.
