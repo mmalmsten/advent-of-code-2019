@@ -36,7 +36,7 @@ A Scala tutorial can be found [here](https://www.tutorialspoint.com/scala/index.
 ## Dec 6th: Julia (⭐️⭐️)
 🔍First appeared 2012. Procedural, functional.
 
-## Dec 7th: Elixir (coming soon...)
+## Dec 7th: Elixir
 🔍First appeared 2011. Functional, concurrent, distributed. Inspired by Ruby, Erlang, and Clojure. Builds on top of Erlang and is running on the BEAM.
 
 💡Elixir comes with a detailed and well-written [documentation](https://hexdocs.pm/elixir)
@@ -58,7 +58,7 @@ A Scala tutorial can be found [here](https://www.tutorialspoint.com/scala/index.
 
 ## Dec 13th: C++
 
-## Dec 14th: R
+## Dec 14th: C#
 
 ## Dec 15th: Objective-C
 
@@ -70,7 +70,7 @@ A Scala tutorial can be found [here](https://www.tutorialspoint.com/scala/index.
 ## Dec 18th: Prolog
 💡SWI Prolog can be tried online here: [here](https://swish.swi-prolog.org)
 
-## Dec 19th: C#
+## Dec 19th: R
 
 ## Dec 20th: Idris 
 
