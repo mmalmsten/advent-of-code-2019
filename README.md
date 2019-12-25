@@ -6,9 +6,9 @@ Some of the programming languages I know by heart, others I had never tried and 
 ## Dec 1st: Forth
 
 
-(There is also a solution to the puzzle written in C.)
+There is also a solution to the puzzle written in C. (Step 1 and 2)
 
-## Dec 2nd: Lisp (⭐️⭐️)
+## Dec 2nd: Lisp (Step 1 and 2)
 🔍First appeared 1958. Functional, procedural, reflective, meta. Influenced e.g. Erlang, Prolog, Forth, Haskell.
 
 💡You can find information [here](https://lisp-lang.org/learn/getting-started/) about how to download and get started with Lisp.
@@ -20,20 +20,20 @@ Start the sbcl shell and run using the following command:
 (start)
 ```
 
-## Dec 3rd: PHP (⭐️⭐️)
+## Dec 3rd: PHP (Step 1 and 2)
 🔍First appeared 1995. Imperative, functional, object-oriented, procedural.
 
-## Dec 4th: Smalltalk (Squeak) (⭐️⭐️)
+## Dec 4th: Smalltalk (Squeak) (Step 1 and 2)
 🔍First appeared 1972 (Squeak in 1996). Object-oriented with its own virtual machine, on which the code can be changed while the program is running.
 
 💡Squeak can be [downloaded here](https://squeak.org/) and there is an outstanding aide-memoire to be found [here](https://wiki.squeak.org/squeak/5699).
 
-## Dec 5th: Scala (⭐️⭐️)
+## Dec 5th: Scala (Step 1 and 2)
 🔍First appeared 2004. Functional, imperative, object-oriented.
 
 A Scala tutorial can be found [here](https://www.tutorialspoint.com/scala/index.htm)
 
-## Dec 6th: Julia (⭐️⭐️)
+## Dec 6th: Julia (Step 1 and 2)
 🔍First appeared 2012. Procedural, functional.
 
 ## Dec 7th: Elixir
@@ -41,28 +41,28 @@ A Scala tutorial can be found [here](https://www.tutorialspoint.com/scala/index.
 
 💡Elixir comes with a detailed and well-written [documentation](https://hexdocs.pm/elixir)
 
-## Dec 8th: Ruby (⭐️)
+## Dec 8th: Ruby (Step 1)
 🔍First appeared 1995. Functional, imperative, object-oriented.
 
 ## Dec 9th: Erlang
 
-## Dec 10th: Lua (⭐️⭐️)
+## Dec 10th: Lua (Step 1 and 2)
 🔍First appeared 1993. Imperative, functional.
 
 💡Lua can be tried online [here](https://www.lua.org/cgi-bin/demo)
 
 ## Dec 11th: Pony
 
-## Dec 12th: Java (⭐️)
+## Dec 12th: Java (Step 1)
 🔍First appeared 1995. Object-oriented (class-based), imperative.
 
 ## Dec 13th: C++
 
-## Dec 14th: JavaScript
+## Dec 14th: JavaScript (Step 1)
 
 ## Dec 15th: Objective-C
 
-## Dec 16th: Haskell (⭐️)
+## Dec 16th: Haskell (Step 1)
 🔍First appeared 1990. Functional.
 
 ## Dec 17th: Golang
