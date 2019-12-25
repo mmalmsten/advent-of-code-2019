@@ -58,7 +58,7 @@ A Scala tutorial can be found [here](https://www.tutorialspoint.com/scala/index.
 
 ## Dec 13th: C++
 
-## Dec 14th: C#
+## Dec 14th: JavaScript
 
 ## Dec 15th: Objective-C
 
@@ -76,7 +76,7 @@ A Scala tutorial can be found [here](https://www.tutorialspoint.com/scala/index.
 
 ## Dec 21th: Self 
 
-## Dec 22th: JavaScript 
+## Dec 22th: C# 
 
 ## Dec 23th: Python 
 
