@@ -70,15 +70,15 @@ A Scala tutorial can be found [here](https://www.tutorialspoint.com/scala/index.
 ## Dec 18th: Prolog
 💡SWI Prolog can be tried online here: [here](https://swish.swi-prolog.org)
 
-## Dec 19th: R
+## Dec 19th: C#
 
 ## Dec 20th: Idris 
 
 ## Dec 21th: Self 
 
-## Dec 22th: C# 
+## Dec 22th: Python (Step 1)
 
-## Dec 23th: Python 
+## Dec 23th: R 
 
 ## Dec 24th: Swift 
 
