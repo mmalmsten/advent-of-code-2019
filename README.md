@@ -64,8 +64,8 @@ Start the sbcl shell and run using the following command:
 ## Dec 14th: JavaScript (Step 1)
 🔍First appeared 1995. Event-driven, functional, imperative, object-oriented.
 
-## Dec 15th: C#
-🔍First appeared 2000. Structured, imperative, object-oriented, event-driven, task-driven, functional, generic, reflective, concurrent.
+## Dec 15th: Pony
+🔍Object-oriented, actor-model, capabilities-secure, high-performance.
 
 ## Dec 16th: Haskell (Step 1)
 🔍First appeared 1990. Functional.
@@ -91,8 +91,8 @@ Start the sbcl shell and run using the following command:
 ## Dec 23th: Swift
 🔍First appeared 2014. Multi-paradigm: protocol-oriented, object-oriented, functional, imperative, block-structured declarative.
 
-## Dec 24th: Pony 
-🔍Object-oriented, actor-model, capabilities-secure, high-performance.
+## Dec 24th: C#
+🔍First appeared 2000. Structured, imperative, object-oriented, event-driven, task-driven, functional, generic, reflective, concurrent.
 
 ## Dec 25th: C
 🔍First appeared 1972. Imperative (procedural), structured. Influenced e.g. C++, Java, PHP, C#.
