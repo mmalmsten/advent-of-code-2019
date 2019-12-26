@@ -91,7 +91,7 @@ Start the sbcl shell and run using the following command:
 ## Dec 23th: Swift
 🔍First appeared 2014. Multi-paradigm: protocol-oriented, object-oriented, functional, imperative, block-structured declarative.
 
-## Dec 24th: C#
+## Dec 24th: C# (Step 1)
 🔍First appeared 2000. Structured, imperative, object-oriented, event-driven, task-driven, functional, generic, reflective, concurrent.
 
 ## Dec 25th: C
