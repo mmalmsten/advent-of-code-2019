@@ -8,7 +8,7 @@ Some of the programming languages I know by heart, others I had never tried and 
 ### Dec 1st 2018: Golang
 🔍First appeared 2009. Concurrent, functional, imperative, object-oriented.
 
-## Dec 2th 2018: Elixir
+### Dec 2th 2018: Elixir
 🔍First appeared 2011. Functional, concurrent, distributed. Inspired by Ruby, Erlang, and Clojure. Builds on top of Erlang and is running on the BEAM.
 
 💡Elixir comes with a detailed and well-written [documentation](https://hexdocs.pm/elixir)
