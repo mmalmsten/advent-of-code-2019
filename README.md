@@ -13,6 +13,9 @@ Some of the programming languages I know by heart, others I had never tried and 
 
 💡Elixir comes with a detailed and well-written [documentation](https://hexdocs.pm/elixir)
 
+### Dec 3th 2018: Swift
+🔍First appeared 2014. General-purpose, multi-paradigm. Influenced by e.g. Objective-C, Python, Haskell.
+
 ## 2019
 
 ### Dec 1st 2019: C
