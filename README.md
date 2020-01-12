@@ -1,5 +1,5 @@
 # 🎄 Advent of Code 🎄
-Here's my take on the Advent of Code challenge. Instead of choosing "the right tool for the job", I decided to take the opportunity of solving the problem using different programming languages.
+Here's my take on the Advent of Code challenge. Instead of choosing "the right tool for the job", I decided to take the opportunity of solving the problem using different programming languages (so far 18).
 
 Some of the programming languages I know by heart, others I had never tried and barely seen before this challenge. And some occasions were definitely a case of "the absolutely wrong tool for the job". So there's a BIG disclosure regarding code quality... 🙈🙈🙈
 
@@ -15,6 +15,9 @@ Some of the programming languages I know by heart, others I had never tried and 
 
 ### Dec 3th 2018: Swift
 🔍First appeared 2014. General-purpose, multi-paradigm. Influenced by e.g. Objective-C, Python, Haskell.
+
+### Dec 5th 2018: Perl
+🔍First appeared 1987. General-purpose, functional, imperative, object-oriented, reflective. Influenced by e.g. BASIC, C, Lisp. Influenced JavaScript, Julia, PHP, Python, Ruby.
 
 ## 2019
 
