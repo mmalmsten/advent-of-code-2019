@@ -1,12 +1,14 @@
 %%----------------------------------------------------------------------
-%% Does not work yet!
+%%
+%% Intcode computer
+%%
 %%----------------------------------------------------------------------
 -module(puzzle9step1).
 
 -export([start/0]).
 
 %%----------------------------------------------------------------------
-%%
+%% Load puzzle input. Set parameters.
 %%----------------------------------------------------------------------
 start() ->
     {ok, File} = file:read_file(
@@ -16,12 +18,12 @@ start() ->
         binary:split(File, <<",">>, [global])),
     Puzzle_input = dict:from_list(List),
     put(relative_base, 0),
-    put(input_value, [1]),
+    put(input_value, 2),
     put(output_value, null),
     run_intcodes(Puzzle_input, 0).
 
 %%----------------------------------------------------------------------
-%%
+%% Get index based on mode
 %%----------------------------------------------------------------------
 get_index(Dict, Index, "0") -> 
     case dict:find(Index, Dict) of {ok, Value} -> Value; _ -> 0 end;
@@ -30,14 +32,14 @@ get_index(Dict, Index, "2") ->
     get(relative_base) + get_index(Dict, Index, "0").
 
 %%----------------------------------------------------------------------
-%%
+%% Get data based on index
 %%----------------------------------------------------------------------
 get_data(Dict, Index, Mode) -> 
     case dict:find(get_index(Dict, Index, Mode), Dict) of 
         {ok, Value} -> Value; _ -> 0 end.
 
 %%----------------------------------------------------------------------
-%%
+%% Run the puzzle input recursively until Opcode is "99"
 %%----------------------------------------------------------------------
 run_intcodes(Puzzle_input, Idx) ->
     {ok, Modes} = dict:find(Idx, Puzzle_input),
@@ -45,9 +47,6 @@ run_intcodes(Puzzle_input, Idx) ->
     A = get_data(Puzzle_input, Idx + 1, [Ma]),
     B = get_data(Puzzle_input, Idx + 2, [Mb]),
     C = get_index(Puzzle_input, Idx + 3, [Mc]),
-
-    io:format("[Mc, Mb, Ma|Opcode] ~p~n",[[Mc, Mb, Ma|Opcode]]),
-    io:format("Opcode ~p~n",[Opcode]),
 
     case Opcode of 
         "01" -> 
@@ -59,8 +58,9 @@ run_intcodes(Puzzle_input, Idx) ->
             run_intcodes(Puzzle_input1, Idx + 4);
 
         "03" -> 
-            [Input_value|T] = get(input_value), put(input_value, T),
-            Puzzle_input1 = dict:store(A, Input_value, Puzzle_input),
+            A1 = get_index(Puzzle_input, Idx + 1, [Ma]),
+            Puzzle_input1 = dict:store(A1, get(input_value), 
+                Puzzle_input),
             run_intcodes(Puzzle_input1, Idx + 2);
 
         "04" -> 
@@ -68,14 +68,14 @@ run_intcodes(Puzzle_input, Idx) ->
             run_intcodes(Puzzle_input, Idx + 2);
 
         "05" -> 
-            case A of 
-                0 -> run_intcodes(Puzzle_input, Idx + 3);
-                _ -> run_intcodes(Puzzle_input, B)
-            end;
+            case A /= 0 of 
+                true -> run_intcodes(Puzzle_input, B);
+                _ -> run_intcodes(Puzzle_input, Idx + 3)
+            end;          
 
         "06" -> 
-            case A of 
-                0 -> run_intcodes(Puzzle_input, B);
+            case A == 0 of 
+                true -> run_intcodes(Puzzle_input, B);
                 _ -> run_intcodes(Puzzle_input, Idx + 3)
             end;
 
@@ -96,8 +96,3 @@ run_intcodes(Puzzle_input, Idx) ->
         "99" -> get(output_value)
 
     end.
-
-
-
-
-

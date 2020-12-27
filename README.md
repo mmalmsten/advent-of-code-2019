@@ -44,7 +44,7 @@ Start the sbcl shell and run using the following command:
 ## Dec 8th: Ruby (Step 1)
 🔍First appeared 1995. Functional, imperative, object-oriented.
 
-## Dec 9th: Erlang
+## Dec 9th: Erlang (Step 1 and 2)
 🔍First appeared 1986. Concurrent, functional.
 
 ## Dec 10th: Lua (Step 1 and 2)
