@@ -1,110 +1,103 @@
-% Should be 2350741403
+%%----------------------------------------------------------------------
+%% Does not work yet!
+%%----------------------------------------------------------------------
+-module(puzzle9step1).
 
--module (puzzle9step1).
+-export([start/0]).
 
--export ([start/0]).
-
+%%----------------------------------------------------------------------
+%%
+%%----------------------------------------------------------------------
 start() ->
-    ets:new(program, [named_table, public, ordered_set]),
     {ok, File} = file:read_file(
-        "/Users/madde/Sites/advent-of-code-2019/input/puzzle5.txt"),
-    Program = lists:map(fun(X) -> binary_to_integer(X) end, 
+        "/Users/madde/Sites/advent-of-code-2019/input/puzzle9.txt"),
+    {List,_} = lists:mapfoldl(fun(X, N) -> 
+        {{N, binary_to_integer(X)}, N + 1} end, 0, 
         binary:split(File, <<",">>, [global])),
-    lists:mapfoldl(fun(X, N) -> ets:insert(program, {N, X}), {ok, N + 1} end, 
-        0, Program),
-    put(relative_b, 0),
-    run(0).
+    Puzzle_input = dict:from_list(List),
+    put(relative_base, 0),
+    put(input_value, [1]),
+    put(output_value, null),
+    run_intcodes(Puzzle_input, 0).
 
-%% -----------------------------------------------------------------------------
+%%----------------------------------------------------------------------
 %%
-%% -----------------------------------------------------------------------------
-write(<<"2">>, N, Data) -> case ets:lookup(program, get(relative_b) + N) of 
-    [{_,N1}] -> ets:insert(program, {N1, Data}); _ -> ok end;
+%%----------------------------------------------------------------------
+get_index(Dict, Index, "0") -> 
+    case dict:find(Index, Dict) of {ok, Value} -> Value; _ -> 0 end;
+get_index(_, Index, "1") -> Index;
+get_index(Dict, Index, "2") -> 
+    get(relative_base) + get_index(Dict, Index, "0").
 
-write(_, N, Data) -> case ets:lookup(program, N) of 
-    [{_,N1}] -> ets:insert(program, {N1, Data}); _ -> ok end.
-
-%% -----------------------------------------------------------------------------
+%%----------------------------------------------------------------------
 %%
-%% -----------------------------------------------------------------------------
-read(<<"0">>, [{_,Data}]) -> 
-    case ets:lookup(program, Data) of [{_,N}] -> N; _ -> 0 end;
-read(<<"1">>, [{_,Data}]) -> Data;
-read(<<"2">>, [{_,Data}]) -> case ets:lookup(program, get(relative_b) + Data) of 
-    [{_,N}] -> N; _ -> 0 end;
-read(Mode, N) -> read(Mode, ets:lookup(program, N)).
+%%----------------------------------------------------------------------
+get_data(Dict, Index, Mode) -> 
+    case dict:find(get_index(Dict, Index, Mode), Dict) of 
+        {ok, Value} -> Value; _ -> 0 end.
 
-%% -----------------------------------------------------------------------------
+%%----------------------------------------------------------------------
 %%
-%% -----------------------------------------------------------------------------
-run(N) ->
-    Optcode = case ets:lookup(program, N) of
-        [{_,99}] -> exit(get(result));
-        [{_,O}] -> erlang:iolist_to_binary(["0000",integer_to_binary(O)])
-    end,
-    Mode = binary:part(Optcode, {byte_size(Optcode)-2, -3}),
-    Instruction = binary:part(Optcode, {byte_size(Optcode), -2}),
-    N1 = match(N, Mode, Instruction),
-    run(N1).
+%%----------------------------------------------------------------------
+run_intcodes(Puzzle_input, Idx) ->
+    {ok, Modes} = dict:find(Idx, Puzzle_input),
+    [Mc, Mb, Ma|Opcode] = string:right(integer_to_list(Modes), 5, $0),
+    A = get_data(Puzzle_input, Idx + 1, [Ma]),
+    B = get_data(Puzzle_input, Idx + 2, [Mb]),
+    C = get_index(Puzzle_input, Idx + 3, [Mc]),
 
-%% -----------------------------------------------------------------------------
-%%
-%% -----------------------------------------------------------------------------
-match(N, <<M3:1/binary, M2:1/binary, M1:1/binary>>, <<_,"1">>) -> 
-    write(M3, N+3, read(M1, N+1) + read(M2, N+2)), N + 4;
+    io:format("[Mc, Mb, Ma|Opcode] ~p~n",[[Mc, Mb, Ma|Opcode]]),
+    io:format("Opcode ~p~n",[Opcode]),
 
-%% -----------------------------------------------------------------------------
-%%
-%% -----------------------------------------------------------------------------
-match(N, <<M3:1/binary, M2:1/binary, M1:1/binary>>, <<_,"2">>) -> 
-    write(M3, N+3, read(M1, N+1) * read(M2, N+2)), N + 4;
+    case Opcode of 
+        "01" -> 
+            Puzzle_input1 = dict:store(C, A + B, Puzzle_input),
+            run_intcodes(Puzzle_input1, Idx + 4);
 
-%% -----------------------------------------------------------------------------
-%%
-%% -----------------------------------------------------------------------------
-match(N, <<_M3:1/binary, _M2:1/binary, M1:1/binary>>, <<_,"3">>) -> 
-    % {ok, Term} = io:read("Input the ID of the system to test: "), 
-    Term = 5,
-    io:format("Term ~p~n",[Term]),
-    write(M1, N+1, Term), N + 2;
+        "02" -> 
+            Puzzle_input1 = dict:store(C, A * B, Puzzle_input),
+            run_intcodes(Puzzle_input1, Idx + 4);
 
-%% -----------------------------------------------------------------------------
-%%
-%% -----------------------------------------------------------------------------
-match(N, <<_M3:1/binary, _M2:1/binary, M1:1/binary>>, <<_,"4">>) -> 
-    put(result, read(M1, N+1)),
-    io:format("result ~p~n",[get(result)]),
-    N + 2;
+        "03" -> 
+            [Input_value|T] = get(input_value), put(input_value, T),
+            Puzzle_input1 = dict:store(A, Input_value, Puzzle_input),
+            run_intcodes(Puzzle_input1, Idx + 2);
 
-%% -----------------------------------------------------------------------------
-%%
-%% -----------------------------------------------------------------------------
-match(N, <<_M3:1/binary, M2:1/binary, M1:1/binary>>, <<_,"5">>) -> 
-    case read(M1, N+1) of 0 -> N + 3; _ -> read(M2, N+2) end;
+        "04" -> 
+            put(output_value, A),
+            run_intcodes(Puzzle_input, Idx + 2);
 
-%% -----------------------------------------------------------------------------
-%%
-%% -----------------------------------------------------------------------------
-match(N, <<_M3:1/binary, M2:1/binary, M1:1/binary>>, <<_,"6">>) -> 
-    case read(M1, N+1) of 0 -> read(M2, N+2); _ -> N + 3 end;
+        "05" -> 
+            case A of 
+                0 -> run_intcodes(Puzzle_input, Idx + 3);
+                _ -> run_intcodes(Puzzle_input, B)
+            end;
 
-%% -----------------------------------------------------------------------------
-%%
-%% -----------------------------------------------------------------------------
-match(N, <<M3:1/binary, M2:1/binary, M1:1/binary>>, <<_,"7">>) -> 
-    case read(M1, N+1) < read(M2, N+2) of true -> write(M3, N+3, 1); 
-        _ -> write(M3, N+3, 0) end, N + 4;
+        "06" -> 
+            case A of 
+                0 -> run_intcodes(Puzzle_input, B);
+                _ -> run_intcodes(Puzzle_input, Idx + 3)
+            end;
 
-%% -----------------------------------------------------------------------------
-%%
-%% -----------------------------------------------------------------------------
-match(N, <<M3:1/binary, M2:1/binary, M1:1/binary>>, <<_,"8">>) -> 
-    case read(M1, N+1) == read(M2, N+2) of true -> write(M3, N+3, 1); 
-        _ -> write(M3, N+3, 0) end, N + 4;
+        "07" -> 
+            X = case A < B of true -> 1; _ -> 0 end,
+            Puzzle_input1 = dict:store(C, X, Puzzle_input),
+            run_intcodes(Puzzle_input1, Idx + 4);
 
-%% -----------------------------------------------------------------------------
-%%
-%% -----------------------------------------------------------------------------
-match(N, <<_M3:1/binary, _M2:1/binary, M1:1/binary>>, <<_,"9">>) -> 
-    put(relative_b, get(relative_b) + read(M1, N+1)), N + 2.
+        "08" -> 
+            X = case A == B of true -> 1; _ -> 0 end,
+            Puzzle_input1 = dict:store(C, X, Puzzle_input),
+            run_intcodes(Puzzle_input1, Idx + 4);
+
+        "09" -> 
+            put(relative_base, get(relative_base) + A),
+            run_intcodes(Puzzle_input, Idx + 2);
+
+        "99" -> get(output_value)
+
+    end.
+
+
+
+
 
