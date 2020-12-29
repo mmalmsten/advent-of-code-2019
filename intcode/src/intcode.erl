@@ -5,39 +5,15 @@
 %%----------------------------------------------------------------------
 -module(intcode).
 
--export([
-    start/0, run/2
-]).
-
-%%----------------------------------------------------------------------
-%% Init tcp socket.
-%%----------------------------------------------------------------------
-start() -> 
-    {ok, LSock} = gen_tcp:listen(5674, [binary, {packet, 0}, 
-                                        {active, false}]),
-    {ok, Sock} = gen_tcp:accept(LSock),
-    io:format("~p~n",[Sock]),
-    do_recv(Sock).
-
-do_recv(Sock) ->
-    case gen_tcp:recv(Sock, 0) of
-        {ok, <<"bye">>} -> gen_tcp:close(Sock);
-        {ok, <<Puzzle:2/binary, Input_value/binary>>} -> 
-            io:format("Received ~p ~p~n",[Puzzle, Input_value]),
-            Response = run(
-                binary_to_list(Puzzle), binary_to_integer(Input_value)),
-            io:format("Response ~p~n",[list_to_binary(Response)]),
-            gen_tcp:send(Sock, list_to_binary(Response)), 
-            do_recv(Sock);
-        _ -> do_recv(Sock)
-    end.
+-export([run/2]).
 
 %%----------------------------------------------------------------------
 %% Load puzzle input. Set parameters.
 %%----------------------------------------------------------------------
 run(Puzzle, Input_value) ->
     {ok, File} = file:read_file([
-        "/Users/madde/Sites/advent-of-code-2019/input/puzzle", 
+        "/Users/malmsten/Sites/advent-of-code-2019/input/puzzle",
+        % "/Users/madde/Sites/advent-of-code-2019/input/puzzle", 
         Puzzle, ".txt"]),
     {List,_} = lists:mapfoldl(fun(X, N) -> 
         {{N, binary_to_integer(X)}, N + 1} end, 0, 
