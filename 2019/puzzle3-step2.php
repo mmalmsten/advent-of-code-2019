@@ -4,8 +4,7 @@
 * Import data and find the Manhattan distance from the central port to the 
 * closest intersection
 */
-$data = file_get_contents(
-    "/Users/madde/Sites/advent-of-code-2019/input/puzzle3.txt");
+$data = file_get_contents("puzzle3.txt");
 $data = explode("\n", $data);
 
 $wire = multi_sort(array_merge(draw_wire($data[0]), draw_wire($data[1])));

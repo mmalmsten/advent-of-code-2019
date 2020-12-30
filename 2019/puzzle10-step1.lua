@@ -1,5 +1,5 @@
 local function read_data()
-    file = "/Users/madde/Sites/advent-of-code-2019/input/puzzle10.txt"
+    file = "puzzle10.txt"
     lines = {}
     y = 0
     for line in io.lines(file) do 

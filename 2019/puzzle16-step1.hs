@@ -26,7 +26,7 @@ phases n inputdata = do
     phases (n + 1) result 
 
 main = do 
-    file <- readFile "/Users/madde/Sites/advent-of-code-2019/input/puzzle16.txt"
+    file <- readFile "puzzle16.txt"
     let input = map (read . (:"")) file :: [Int]
     print( phases 0 input )
     return ()

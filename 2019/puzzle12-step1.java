@@ -73,7 +73,7 @@ class Puzzle12 {
 	private static void importMoons() {
 		moons = new ArrayList<Moon>();
 		try {
-			File myObj = new File("/Users/madde/Sites/advent-of-code-2019/input/puzzle12.txt");
+			File myObj = new File("puzzle12.txt");
 			Scanner myReader = new Scanner(myObj);
 			Pattern p = Pattern.compile("([^0-9\\-,])");
 			while (myReader.hasNextLine()) {

@@ -1,4 +1,4 @@
-file = File.open("/Users/madde/Sites/advent-of-code-2019/input/puzzle8.txt")
+file = File.open("puzzle8.txt")
 data = file.read
 file.close
 

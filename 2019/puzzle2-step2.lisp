@@ -8,7 +8,7 @@
 ;;; Import data from file and convert using comma-split
 (defun prepare-data ()
     (defvar input-data (comma-split (with-open-file 
-        (stream "/Users/madde/Sites/advent-of-code-2019/input/puzzle2.txt") 
+        (stream "puzzle2.txt") 
         (read-line stream))))
     input-data)
 

@@ -15,7 +15,7 @@ def deal_with_increment(n):
 		table[(i * n) % len(deck)] = deck[i]
 	return table
 
-complete_shuffle_process = open("/Users/madde/Sites/advent-of-code-2019/input/puzzle22.txt", "r").read().split('\n')
+complete_shuffle_process = open("puzzle22.txt", "r").read().split('\n')
 
 for technique in complete_shuffle_process:
 	if(technique[0:19] == "deal with increment"):

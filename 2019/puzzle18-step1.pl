@@ -55,8 +55,7 @@ walk(A, Visited, Steps, Keys, Doors, Result) :-
 init_data :-
     retractall(connected(_,_,_)), retractall(cell(_,_)), 
     retractall(pos(_)), retractall(key(_,_)), retractall(door(_,_)),
-    open('/Users/madde/Sites/advent-of-code-2019/input/puzzle18.txt', 
-        read, Stream), 
+    open('puzzle18.txt', read, Stream), 
     init_data(0, Stream), !.
 init_data(_, Stream) :- at_end_of_stream(Stream), close(Stream).
 init_data(Y, Stream) :-

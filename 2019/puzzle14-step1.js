@@ -9,7 +9,7 @@ let remaining = {}
 // -----------------------------------------------------------------------------
 const import_data = () => {
     let lst = fs
-        .readFileSync("/Users/madde/Sites/advent-of-code-2019/input/puzzle14.txt")
+        .readFileSync("puzzle14.txt")
         .toString()
         .split("\n")
 

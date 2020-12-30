@@ -17,9 +17,7 @@ namespace Puzzle24
             area = new Space[25];
             repeating = false;
 
-            string[] f = File.ReadAllText(
-                "/Users/madde/Sites/advent-of-code-2019/input/puzzle24.txt"
-            ).Split("\n");
+            string[] f = File.ReadAllText("puzzle24.txt").Split("\n");
             
             int biodiversityRating = 1;
             int index = 0;

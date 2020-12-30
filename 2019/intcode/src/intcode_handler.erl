@@ -10,9 +10,7 @@
 %%----------------------------------------------------------------------
 init(Req0, State) ->
 	#{path := <<"/",Puzzle:1/binary,"/",Input_value/binary>>} = Req0,
-    {ok, File} = file:read_file([
-        "/Users/madde/Sites/advent-of-code-2019/input/puzzle", 
-        binary_to_list(Puzzle), ".txt"]),
+    {ok, File} = file:read_file(["puzzle", binary_to_list(Puzzle), ".txt"]),
     {List,_} = lists:mapfoldl(fun(X, N) -> 
         {{N, binary_to_integer(X)}, N + 1} end, 0, 
         binary:split(File, <<",">>, [global])),

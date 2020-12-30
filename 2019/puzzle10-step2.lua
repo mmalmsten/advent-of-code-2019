@@ -1,7 +1,6 @@
 -- Read data from file and import to table
 local function read_data()
-    file = "input/input10.txt"
-    -- file = "/Users/madde/Sites/advent-of-code-2019/input/puzzle10.txt"
+    file = "input10.txt"
     lines = {}
     y = 0
     for line in io.lines(file) do 

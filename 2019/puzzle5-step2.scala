@@ -6,7 +6,7 @@ object Puzzle5 {
 // Import program
 //------------------------------------------------------------------------------
     val program = scala.io.Source
-        .fromFile("/Users/madde/Sites/advent-of-code-2019/input/puzzle5.txt")
+        .fromFile("puzzle5.txt")
         .mkString.split(",").map( x => x.toInt )
 
 //------------------------------------------------------------------------------

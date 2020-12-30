@@ -5,9 +5,7 @@
 int main(void) {
 	// Import puzzle data and add to array
 	FILE *fptr;
-	fptr = fopen(
-		"/Users/madde/Sites/advent-of-code-2019/input/puzzle1.txt","r"
-	);
+	fptr = fopen("puzzle1.txt","r");
 
 	int numberArray[100];
 	int i;

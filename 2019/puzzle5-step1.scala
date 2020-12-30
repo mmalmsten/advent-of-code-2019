@@ -3,7 +3,7 @@ import scala.io.Source
 object Puzzle5 {
 
     val program = scala.io.Source
-        .fromFile("/Users/madde/Sites/advent-of-code-2019/input/puzzle5.txt")
+        .fromFile("puzzle5.txt")
         .mkString.split(",").map( x => x.toInt )
 
     def operand( mode:Int, data:Int ) : Int = {

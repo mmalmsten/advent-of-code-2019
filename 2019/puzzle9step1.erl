@@ -11,8 +11,7 @@
 %% Load puzzle input. Set parameters.
 %%----------------------------------------------------------------------
 start() ->
-    {ok, File} = file:read_file(
-        "/Users/madde/Sites/advent-of-code-2019/input/puzzle9.txt"),
+    {ok, File} = file:read_file("puzzle9.txt"),
     {List,_} = lists:mapfoldl(fun(X, N) -> 
         {{N, binary_to_integer(X)}, N + 1} end, 0, 
         binary:split(File, <<",">>, [global])),
